@@ -18,6 +18,9 @@ jobs:
       with:
         test-name: Unit tests
         timeout: 600
+        setup-command: |
+          python -m pip install --upgrade pip
+          python -m pip install pytest
         command: |
           export PYTHONPATH="$GITHUB_WORKSPACE"
           python -m pytest -q
